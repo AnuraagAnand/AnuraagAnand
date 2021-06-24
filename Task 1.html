@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+
+    body {
+        background-color: black;
+        opacity: 100%;
+        color:rgb(255, 255, 255);
+
+    }
+    h1 {
+        color:rgb(255, 0, 0);
+        font-family: cursive;
+        font-style: italic;
+        text-align: center;
+    }
+    /* Digital Clock Styling Starts */
+    #clock{
+
+color:red;
+border: 5px solid greenyellow;
+margin: 0px 675px 160px;
+
+text-align: center; 
+background-color: black;
+font-size: 250%;
+}
+
+    /* Digital Clock Styling Ends */
+
+    /* Calendar Styling Starts */
+#Calendar {
+border-radius: 20px;
+font-family: cursive;
+color: greenyellow;
+border-collapse: collapse;
+background-color: red;
+}
+
+th{   
+    border-radius: 30px;
+        color :red;
+        text-align: center;
+        background-color: black;
+        margin: 200px;
+        font-size: 30px;    
+}
+
+td{
+
+    padding:5px;
+        font-size: 1.5em; 
+        text-align: center; 
+        background-color: black;
+        
+        color:chartreuse; 
+        font-family: 'Times New Roman', Times, serif;
+        border:none
+
+
+}
+    /* Calendar Styling Ends */
+
+    /*Task Styling Begins */
+#Taskbox {
+  display: block;
+  width: 40px;
+  margin: 40px;
+
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li * {
+  float: left;
+}
+li, h3 {
+  clear:both;
+  list-style:none;
+}
+input, button {
+  outline: none;
+}
+button {
+  background: black;
+  border: solid rgb(255, 182, 47) 5px;
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+  width: 80px;
+  margin: 10px 0 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h3,
+label[for='new-task'] {
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid rgb(253, 187, 6);
+  padding: 30px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+input[type="text"] , #Date{
+  margin: 10px;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 3px solid rgb(255, 0, 0);
+  background: rgb(0, 0, 0);
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: rgb(255, 251, 0);
+}
+
+
+label[for='new-task'] {
+  display: block;
+ 
+}
+input#new-task {
+  float: left;
+  width: 318px;
+}
+
+
+li {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+li > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+li >  input[type="text"] {
+  width: 226px;
+}
+
+#completed-tasks label {
+  text-decoration: line-through;
+  color: rgb(62, 236, 18);
+}
+ </style>
+
+</head>
+<h1>Spider Task 1</h1><br>
+<!--Displaying Current Time-->
+<h2 style="color: rgba(0, 153, 255, 0.767);text-align: center;">Current Time :-</h2><br>
+
+<body>
+<div id="clock"></div>
+
+</body>
+
+<script>
+/*Js for displaying current time */
+    setInterval(time,100)
+function time()
+{
+const d= new Date();
+var hrs=d.getHours();
+var mins=d.getMinutes();
+var secs=d.getSeconds();
+var k;
+if(hrs > 12)
+{
+hrs=hrs-12;
+k="PM";
+}
+else if(hrs == 0)
+{
+hrs =12;
+k="AM";
+}
+else
+{
+  k="PM";
+}
+if(hrs<10)
+hrs="0"+hrs;
+if(mins<10)
+mins="0" + mins;
+if(secs<10)
+secs = "0" + secs;
+var current_time= hrs + ":" + mins + ":" + secs + " " + k;
+document.getElementById("clock").innerHTML=current_time;
+}
+time();
+</script>
+
+<!--Displaying Calendar-->
+<table id="#Calendar" align="left">
+    <tr>
+    <th colspan="8">July</th>
+    </tr>
+    
+    <tr>
+    <td>Sun</td>
+    <td>Mon</td>
+    <td>Tue</td>
+    <td>Wed</td>
+    <td>Thu</td>
+    <td>Fri</td>
+    <td>Sat</td>
+    </tr>
+    
+    <tr>
+    <td height="35"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    </tr>
+    
+    <tr>
+    <td height="35">4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+    </tr>
+    
+    <tr>
+    <td height="35">11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+    <td>15</td>
+    <td>16</td>
+    <td>17</td>
+    </tr>
+    
+    <tr>
+    <td height="35">18</td>
+    <td>19</td>
+    <td>20</td>
+    <td>21</td>
+    <td>22</td>
+    <td>23</td>
+    <td>24</td>
+    </tr>
+    
+    <tr>
+    <td height="35">25</td>
+    <td>26</td>
+    <td>27</td>
+    <td>28</td>
+    <td>29</td>
+    <td>30</td>
+    <td>31</td>
+    </tr>
+
+</table>
+
+<!--Displaying To-Do-->
+<div id="#Taskbox">
+    <p>
+        <label for="new-task">Add Item</label><input id="new-task" type="text"><label for="Date" style="font-size: 150%; color: white;">Date :</label><input id="Date" type="number"><button>Add</button>  
+    
+    </p>
+  <span id="clr1"></span><span id="clr2"></span>
+    <h3>To-Do List</h3>
+    <ul id="incomplete-tasks">
+  
+    </ul>
+  
+    <h3>Completed</h3>
+    <ul id="completed-tasks">
+  
+    </ul>
+  </div>
+  <script>
+      /* Js for To-Do */
+    var taskInput=document.getElementById("new-task");
+    var taskdate=document.getElementById("Date");
+    var filler1 = document.getElementById("clr1");
+    var filler2= document.getElementById("clr2");
+    filler1.value=" (";
+    filler2.value=" July )"
+    var addButton=document.getElementsByTagName("button")[0];
+    var incompleteTaskHolder=document.getElementById("incomplete-tasks");
+    var completedTasksHolder=document.getElementById("completed-tasks");
+    
+    
+    var createNewTaskElement=function(taskString){
+        var listItem=document.createElement("li");      
+        var checkBox=document.createElement("input");
+        var label=document.createElement("label");
+       
+      var deleteButton=document.createElement("button");
+        label.innerText=taskString;
+        checkBox.type="checkbox";
+
+        deleteButton.innerText="Delete";
+        deleteButton.className="delete";   
+    
+        listItem.appendChild(checkBox);
+        listItem.appendChild(label);
+        listItem.appendChild(deleteButton);
+        return listItem;
+    }
+    
+    var addTask=function(){
+        console.log("Add Task...");
+        var listItem=createNewTaskElement(taskInput.value + filler1.value + taskdate.value + filler2.value);
+    
+        incompleteTaskHolder.appendChild(listItem);
+        bindTaskEvents(listItem, taskCompleted);
+    
+        taskInput.value="";
+      taskdate.value="";
+      filler1.value="";
+      filler2.value="";
+    
+    }
+    
+   
+    var deleteTask=function(){
+            console.log("Delete Task...");
+    
+            var listItem=this.parentNode;
+            var ul=listItem.parentNode;
+            ul.removeChild(listItem);
+    }
+    
+    
+    var taskCompleted=function(){
+            console.log("Complete Task...");
+        var listItem=this.parentNode;
+        completedTasksHolder.appendChild(listItem);
+                    bindTaskEvents(listItem, taskIncomplete);
+    
+    }
+    
+    
+    var taskIncomplete=function(){
+            console.log("Incomplete Task...");
+
+            var listItem=this.parentNode;
+        incompleteTaskHolder.appendChild(listItem);
+                bindTaskEvents(listItem,taskCompleted);
+    }
+    var ajaxRequest=function(){
+        console.log("AJAX Request");
+    }
+    
+
+    addButton.onclick=addTask;
+    addButton.addEventListener("click",addTask);
+    addButton.addEventListener("click",ajaxRequest);
+    
+    
+    var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
+        console.log("bind list item events");
+  
+        var checkBox=taskListItem.querySelector("input[type=checkbox]");
+        var deleteButton=taskListItem.querySelector("button.delete");
+    
+                
+         deleteButton.onclick=deleteTask;
+          
+        checkBox.onchange=checkBoxEventHandler;
+    }
+    
+        for (var i=0; i<incompleteTaskHolder.children.length;i++){
+    
+            bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
+        }
+    
+        for (var i=0; i<completedTasksHolder.children.length;i++){
+            bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
+        }
+    </script>
+</html>
